@@ -1,0 +1,221 @@
+body{
+	/*unidades de medida px-pixeles, em-unidad de medida relativa al padre(ejemplo docy tiene el font-size=20px 
+	si declaramos alguno de las cajas hijas de body con font-size:2em esto equivale a 40px), */
+	font-family:"Yeseva+One";
+	font-size:20px;
+}
+
+/*existen los selectores de etiquetas, selectores de id, y selectores de clase*/
+
+/*SELECTORES DE ETIQUETAS*/
+/*<!--elemento de bloque: ocupan todo el renglón-->*/
+header{
+	/*LOS PRIMERO DOS dígitos es igual a rojo,
+		los dos dígito intermedios es igual a verde
+		los últimos dos dígitos es igual a azul
+		RGB
+		HEXADECIMAL*/
+	background-color:#34302d;
+	/* ESQUEMA RGB
+	rgb(ROJO, VERDE, AZUL)*/
+	/*background-color:rgb(0,255,0);*/
+	/*CON CODIFICACIÓN RGBA
+	rgba(ROJO, VERDE, AZUL, ALFA-CHANNEL)
+	ALFA-CHANNEL VA DEL 0 AL 1, 1 QUIERE DECIR NO QUIERO QUE TRANSPARENTES ESTA COSA :P*/
+	/*background-color:rgba(0,255,0,0.4);*/
+	/*border:5px solid #6db33f;*/
+	/*borde unicamente en la parte de arriba*/
+	border-top:5px solid #6db33f;
+	/*margin-bottom:1em;*/
+	/*SI HAY DOS REGLAS REPETIDAS
+	GENERALMENTE LE HACE CASO A LA ÚILTIMA REGLA*/
+}
+/*<!--elemento de línea: ocupa el espacio mínimo utilizado-->*/
+span{
+	background-color:green;
+}
+section{
+	background-color:#00ff00;
+}
+
+footer{
+	padding:1em;
+	height:8em;
+	color:white;
+	background-color: #34302d;
+}
+
+/*SELECTORES DE IDs*/
+#frases{
+	background-color:#6db33f;
+	/*la propiedad text-align aplica sobre los elementos inline-block, no solamente al texto*/
+	text-align:center;
+	padding-top:2em;
+	padding-bottom:2em;
+	/*colo de texto blanco*/
+	color:white;
+}
+#bienvenida{
+	/*PROPIEDADES DEL MODELO DE CAJAS - CONTENIDO*/
+	height:500px;
+	/*width:400px;*/
+	/*con ../ le estoy diciendo que se salga de la carpeta actual y busque la carpeta indicada*/
+	background:url(../imagenes/fondo_presentacion.jpg);
+	/*Cuando indicamos un tamaño más grande que el tamaño original de la imagen se tiene a repetir la imágen en la caja,
+	para esto se agrega la propiedad background-repeat*/
+	background-repeat:no-repeat;
+	/*la propiedad background-size es para que haga un resize de la imagen para que llene el espacio de la caja*/
+	background-size:cover;
+	/*para agregar el efecto fondo paralax, es decir al hacer el scroll la imagen parece quedarse en la misma posición*/
+	background-attachment:fixed;
+	/*background-size:50% 50%; los dos valores el orden es ancho y alto*/
+	/*background-size:50% 50%;*/
+	color:white;
+	text-align:center;
+	/*truco para centrar el texto verticalmente en la caja
+	tiene que agregar a la propiedad line-height el mismo tamaño height que le pusimos a la caja
+	*/
+	line-height:500px;
+	font-size:2em;
+	/*separar cajas una de la otra*/
+	/*margin-bottom:2em;*/
+}
+
+#menu{
+	/*esto se esta agregando porque el elemento ul tiene un margen por default*/
+	margin:0px;
+}
+
+#derechos, #suscripcion{
+	width:45%;
+	display:inline-block;
+}
+/*selector de descendientes*/
+#menu li{
+	color:white;
+	display:inline-block;
+	/*relleno ARRIBA, DERECHA, ABAJO, IZQUIERDA*/
+	padding:1em 0.5em 1em 0.5em;
+	/*padding-left:.5em;
+	padding-right:.5em;*/
+}
+
+
+#suscripcion input{
+	display:block; /*los elementos de bloque siempre ocupan un renglón, es decir va a hacer que la caja de texto se baje*/
+	width:70%;
+	/*para navegadores viejitos, se usan prefijos, -webkit- es el engine que usa por debajo chrome (chrome o safari viejitos)*/
+	/*-webkit-transition:width 0.5s linear;*/
+	/*para navegadores viejitos, se usan prefijos, -o- es el engine que usa por debajo opera (opera viejito)*/
+	/*-o-transition:width 0.5s linear;*/
+	/*para navegadores viejitos, se usan prefijos, -ms- es el engine que usa por debajo ie 8 en adelante (internet explorer 8 en adelante)*/
+	/*-ms-transition:width 0.5s linear;*/
+	/*para navegadores viejitos, se usan prefijos, -moz- es el engine que usa por debajo firefox (firefox viejitos)*/
+	/*-moz-transition:width 0.5s linear;*/
+	/*TRANSITION: PROPIEDAD _CSS TIEMPO_EN_SEGUNDOS FUNCION_TRANSICIÓN*/
+	/*transition:width 0.5s linear; /*para la transición ancho*/
+	
+	/*para animoar dos propiedades al mismo tiempo*/
+	/*Esto no fuunciona
+	transition:width 0.5s linear; /*para la transición ancho*
+	transition:height 0.5s linear; /*para la transición alto*
+	*/
+	/*Esto si funciona*/
+	/*transition:width 0.5s linear, height 1s linear; /*para la transición ancho y alto*/
+	
+	transition: all 0.5s linear 2s; /*para la transición en todo*/
+}
+
+/*PSEUDO SELECTOR*/
+#suscripcion input:focus{ /*Para escuchar eventos*/
+	width:90%;
+	height:4em;
+}
+
+/*Selectores de clases*/
+/*elemento inline-block- elemento de línea y bloque*/
+.frase{
+	display:inline-block;
+	width:30%;
+	transition: all 0.5s ease; /*el transform aplicao tambíen va a rotar en el tiempo declarado en la transición*/
+}
+
+.frase:hover{ /*Cuando alguien ponga el ratón encima de la caja- para eso se agrega hover*/
+	/*display:inline-block;
+	width:30%;*/
+	-webkit-transform:scale(1.3);
+	-moz-transform:scale(1.3);
+	-moz-transform:rotate(360deg); /*solo va a rotar porque es la ultima propiedad que declaré para la transformación*/
+	/*rotación sobre el eje x*/
+	-moz-transform:rotateX(60deg);
+	/*múltiples rotaciones*/
+	-moz-transform:rotateY(60deg) rotateX(60deg);
+	/*trasladar una imagen*/
+	-moz-transform:translateY(2em);
+}
+
+.imagenes{
+	margin-top: 1em;
+}
+
+.redes img{
+	/*display:inline-block;*/
+	margin-right:0.3em;
+	padding:0.5em;
+	transition: all 0.5s ease; /*el transform aplicao tambíen va a rotar en el tiempo declarado en la transición*/
+}
+
+.redes img:hover{ /*Cuando alguien ponga el ratón encima de la caja- para eso se agrega hover*/
+	/*display:inline-block;
+	width:30%;*/
+	-webkit-transform:scale(1.3);
+	-moz-transform:scale(1.3);
+	-moz-transform:rotate(360deg); /*solo va a rotar porque es la ultima propiedad que declaré para la transformación*/
+	/*rotación sobre el eje x*
+	-moz-transform:rotateX(60deg);
+	/*múltiples rotaciones*
+	-moz-transform:rotateY(60deg) rotateX(60deg);
+	/*trasladar una imagen*
+	-moz-transform:translateY(2em);*/
+}
+
+form input:required:invalid{
+	background:url(../imagenes/incorrecto.png);
+	background-repeat:no-repeat;
+	background-size:20px;
+	background-position: top right;
+}
+
+form input:required:valid{
+	background:url(../imagenes/correcto.png);
+	background-repeat:no-repeat;
+	background-size:20px;
+	background-position: top right;
+}
+
+.flexible{
+	max-width:100%;
+}
+/*max-width máximo ancho que no pasa la pantalla*/
+@media screen and (min-width:200px) and (max-width:420px){
+	.frase{
+		display:block;
+		width:100%;
+	}
+	
+	#bienvenida{
+		line-height: 1em;
+		height:auto;
+		padding:1em;
+	}
+	
+	#derechos, #suscripcion{
+		width:100%;
+		display:block;
+		padding:1em;
+	}
+	
+	footer{
+		height:auto;
+	}
+}

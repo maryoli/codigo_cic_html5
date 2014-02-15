@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<!--html lang="en" --para el idioma inglés-->
+<html lang="es">
+	<head>
+		<meta charset="utf-8"/>
+		<!--meta charset="utf-8"/-- tiene que estar el mismo encoding con el que el navegador descifra el contenido de la página-->
+		<!--meta charset="iso-88591"/-->
+		<title>Mi página</title>
+		<link href='http://fonts.googleapis.com/css?family=Yeseva+One' rel='stylesheet' type='text/css'>
+		<link href="imagenes/chela.png" rel="shortcut icon"/>
+		<link href="css/normalize.css" rel="stylesheet"/>
+		<!--los que estaba dentro de la etiqueta style se paso a un archivo con extensión css,
+		y para importar esos estilos agregados al nuevo archivo se utiliza la etiqueta link-->
+		<link href="css/estilos.css" rel="stylesheet"/>
+		<style>
+		</style>
+	</head>
+	<body>
+		<!-- ejemplo para ver el encoding
+		canción
+		-->
+		<!-- se utilizaba antiguamente
+		<div>
+		</div>
+		-->
+		<!--estas son etiquetas semánticas: para decir al navegador que bloques están contenidos en nuestra página-->
+		<header>
+			<nav>
+				<!-- ul- listas no ordenadas
+					ol-  listas ordenadas-->
+				<ul id="menu">
+					<!--ests son listas-->
+					<li>Inicio</li>
+					<li>Productos</li>
+					<li>Blog</li>
+					<li>Acerca</li>
+				</ul>
+			</nav>
+		</header>
+		<form action="/contactar" method="post">
+			<label for="nombre" >Nombre:</label>
+			<input id="nombre" type="text" name="nombre"/>
+			<label for="email" >Email:</label>
+			<!--validaciones del lado del cliente-->
+			<!--el atributo required obliga a que sea un campo introducido-->
+			<input id="email" type="email" name="email" required/>
+			<label for="website" >Website(URL):</label>
+			<input id="website" type="url" name="website" pattern="http(s)?://[a-zA-Z]+.[a-zA-Z]+"/>
+			<label for="edad" >Edad:</label>
+			<!--step es para inidcar cuantas unidades avanza o retrocede el indicador de los números-->
+			<input id="edad" type="number" name="edad" min="18" max="90" step="5"/>
+			<!--input id="edad" type="range" name="edad" min="18" max="90" step="5"/-->
+			<label for="comentario" >Cometario:</label>
+			<textarea id="comentario" name="comentario"></textarea>
+			<input type="submit" value="enviar"/>
+		</form>
+		<footer>
+			<div id="derechos">
+				<span>MiPágina</span> derechos reservados
+				<div class="redes">
+					<img src="imagenes/facebook.png"/>
+					<img src="imagenes/twitter.png"/>
+					<img src="imagenes/googleplus.png"/>
+					<img src="imagenes/youtube.png"/>
+				</div>
+			</div>
+			<div id="suscripcion">
+				<form action="/suscribir" method="post">
+					<label for="email" >Suscríbete:</label>
+					<input id="email" type="text" name="email"/>
+					<input type="submit" value="enviar"/>
+				</form>
+			</div>
+		</footer>	
+	</body>
+</html>
+
+<!-- CONSULTAR PÁGINA CODING DOJO-->
+<!-- CONSULTAR PÁGINA COLOR SCHEME DESIGNER-->
+<!-- CONSULTAR PÁGINA NORMALIZE-->
+<!-- CONSULTAR PÁGINA GOOGLE FONTS-->

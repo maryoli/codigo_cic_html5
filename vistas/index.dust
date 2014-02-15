@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<!--html lang="en" --para el idioma inglés-->
+<html lang="es">
+	<head>
+		<meta charset="utf-8"/>
+		<!--meta charset="utf-8"/-- tiene que estar el mismo encoding con el que el navegador descifra el contenido de la página-->
+		<!--meta charset="iso-88591"/-->
+		<title>Mi página</title>
+		<link href='http://fonts.googleapis.com/css?family=Yeseva+One' rel='stylesheet' type='text/css'>
+		<link href="imagenes/chela.png" rel="shortcut icon"/>
+		<link href="css/normalize.css" rel="stylesheet"/>
+		<!--los que estaba dentro de la etiqueta style se paso a un archivo con extensión css,
+		y para importar esos estilos agregados al nuevo archivo se utiliza la etiqueta link-->
+		<link href="css/estilos.css" rel="stylesheet"/>
+		<style>
+		</style>
+	</head>
+	<body>
+		<!-- ejemplo para ver el encoding
+		canción
+		-->
+		<!-- se utilizaba antiguamente
+		<div>
+		</div>
+		-->
+		<!--estas son etiquetas semánticas: para decir al navegador que bloques están contenidos en nuestra página-->
+		<header>
+			<nav>
+				<!-- ul- listas no ordenadas
+					ol-  listas ordenadas-->
+				<ul id="menu">
+					<!--ests son listas-->
+					<li>Inicio</li>
+					<li>Productos</li>
+					<li>Blog</li>
+					<li>Acerca</li>
+				</ul>
+			</nav>
+		</header>
+		<section id = "bienvenida">
+			{frase}{datos.nombre}
+		</section>
+		<!-- section-sirve para agregar una sección a la página -->
+		<!--section id="bienvenida">
+			Programar con corazón
+		</section-->
+		<section id="frases">
+			<div class="frase">
+				<img src="imagenes/chela.png"/>
+				<p>Imaginar</p>
+			</div>
+			<div class="frase">
+				<img src="imagenes/lambda.png"/>
+				<p>Pensar</p>
+			</div>
+			<div class="frase">
+				<img src="imagenes/python.png"/>
+				<p>Crear</p>
+			</div>
+		</section>
+		<section>
+			<!-- esto hace lo mismo
+			<video controls="controls" poster="imagenes/logo-chrome.jpg">
+			<video controls="" poster="imagenes/logo-chrome.jpg">
+			<video controls poster="imagenes/logo-chrome.jpg">
+			--
+			
+			con el atributo autplay el video se repodruce automáticamente
+			est también es lo mismo
+			<video controls="controls" poster="imagenes/logo-chrome.jpg" autoplay="autoplay">
+			<video controls="controls" poster="imagenes/logo-chrome.jpg" autoplay="">
+			<video controls="controls" poster="imagenes/logo-chrome.jpg" autoplay>
+			-->
+			
+			<!--- el atributo "controls" agrega el notonsito de play-->
+			<video controls="controls" poster="imagenes/logo-chrome.jpg" autoplay="autoplay" class="flexible">
+				<source src="videos/chrome_japan.mp4"  type="video/mp4"/>
+				<source src="videos/chrome_japan.ogv"  type="video/ogg"/>
+				<source src="videos/chrome_japan.webm"  type="video/webm"/>
+				Tu navegador no soporta video html5 :(
+				<!--También se puede usar: <source></source>-->
+			</video>
+		</section>
+		<footer>
+			<div id="derechos">
+				<span>MiPágina</span> derechos reservados
+				<div class="redes">
+					<img src="imagenes/facebook.png"/>
+					<img src="imagenes/twitter.png"/>
+					<img src="imagenes/googleplus.png"/>
+					<img src="imagenes/youtube.png"/>
+				</div>
+			</div>
+			<div id="suscripcion">
+				<form action="/suscribir" method="post">
+					<label for="email" >Suscríbete:</label>
+					<input id="email" type="text" name="email"/>
+					<input type="submit" value="enviar"/>
+				</form>
+			</div>
+		</footer>	
+	</body>
+</html>
+
+<!-- CONSULTAR PÁGINA CODING DOJO-->
+<!-- CONSULTAR PÁGINA COLOR SCHEME DESIGNER-->
+<!-- CONSULTAR PÁGINA NORMALIZE-->
+<!-- CONSULTAR PÁGINA GOOGLE FONTS-->

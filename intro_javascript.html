@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es" >
+	<head>
+		<meta charset="utf-8"/>
+		<title>Intro a JavaScript</title>
+		<script>
+		/*Las siguiente dos líneas hacen exactamente lo mismo*/
+			//document.write("<h1>hola mundo</h1>");
+			//document.write('<h1>hola mundo</h1>'+"texto 2");
+			//document.write(5+4); /*Va a inprimir 9*/
+			
+			/*las siguientes lineas no imprimen lo mismo*/
+			//document.write(5+4+"otro texto");
+			//document.write("otro texto"+5+4);
+			/*las siguientes líneas si imprime lo mismo*/
+			//document.write((5+4)+"otro texto");
+			//document.write("otro texto"+(5+4));
+			
+			//var nombre = "maryoli"; /*se le asigna el texto "maryoli" a la variable nombre*/
+			//document.write(nombre);
+			//var suma = 3+2;
+			//document.write(suma);
+			//var sumaFloat = 0.1+0.2;
+			//document.write(sumaFloat);
+			
+			//var $ = "robles";
+			
+			//var usuario = prompt("Escribe tu nombre");
+			//document.write("Usuario = "+usuario);
+			
+			/*function suma(a, b){
+				var resultado = a + b;
+				return resultado;
+				//document.write("resultado = "+resultado);
+			}
+			
+			var resultado = suma(5, 7);
+			document.write("resultado retornado = "+resultado);*/
+			/*las funciones se pueden guardar en variables*/
+			var suma = function (a, b){ //función anónima
+				var resultado = a + b;
+				return resultado;
+				//document.write("resultado = "+resultado);
+			};
+			
+			var resultado = suma(5, 7);
+			document.write("resultado retornado = "+resultado+"\n");
+			
+			function operacion(miFuncion, a, b){
+				return miFuncion(a, b);
+			}
+			
+			var resul = operacion(suma, 1, 2);
+			document.write("Resultado operación = "+resul+"\n");
+			
+			/*definiendo la función anónma dentro de los argumentos*/
+			var res = operacion(function(a,b){
+				var resultado = a * b;
+				return resultado;
+			},5, 7);
+			document.writeln("Resultado multiplicado = "+res);
+			
+			/*Declarar objetos en JavaScript*/
+			/*var persona = {
+				nombre:"Maryoli",
+				edad:23,
+				hablar:function(){
+					document.writeln("hola desde la función de la propiedad hablar en el objetro persona");
+				}
+			};
+			
+			document.writeln("persona.nombre="+persona.nombre);*7
+			/*Agregar los parentesis para invocar la propiedad que contiene una función*/
+			//persona.hablar();
+			
+			/*var persona = {
+				nombre:"",
+				domicilio:"",
+				telefono:""
+			};*/
+			
+			var persona = {};
+			persona.nombre = prompt("Ingrese su nombre");
+			persona.domicilio = prompt("Ingrese su domicilio");
+			persona.telefono = prompt("Ingrese su número telefónico");
+			
+			document.writeln("<div>Nombre capturado = "+persona.nombre+"</div>");
+			document.writeln("<div>Domicilio capturado = "+persona.domicilio+"</div>");
+			document.writeln("<div>Telefono capturado = "+persona.telefono+"</div>");
+			
+			/*javascript: es un lenguaje funcional*/
+			/*Lambda:  pasar una funcion como parámetroa otra función*/
+		</script>
+	</head>
+	<body>
+		<!-- nada por ahora en el body -->
+	</body>
+</html>
